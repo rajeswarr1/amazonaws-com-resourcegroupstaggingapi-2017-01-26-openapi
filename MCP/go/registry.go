@@ -1,0 +1,27 @@
+package main
+
+import (
+	"github.com/aws-resource-groups-tagging-api/mcp-server/config"
+	"github.com/aws-resource-groups-tagging-api/mcp-server/models"
+	tools_x_amz_target_resourcegroupstaggingapi_20170126_describereportcreation "github.com/aws-resource-groups-tagging-api/mcp-server/tools/x_amz_target_resourcegroupstaggingapi_20170126_describereportcreation"
+	tools_x_amz_target_resourcegroupstaggingapi_20170126_getcompliancesummary "github.com/aws-resource-groups-tagging-api/mcp-server/tools/x_amz_target_resourcegroupstaggingapi_20170126_getcompliancesummary"
+	tools_x_amz_target_resourcegroupstaggingapi_20170126_getresources "github.com/aws-resource-groups-tagging-api/mcp-server/tools/x_amz_target_resourcegroupstaggingapi_20170126_getresources"
+	tools_x_amz_target_resourcegroupstaggingapi_20170126_gettagkeys "github.com/aws-resource-groups-tagging-api/mcp-server/tools/x_amz_target_resourcegroupstaggingapi_20170126_gettagkeys"
+	tools_x_amz_target_resourcegroupstaggingapi_20170126_gettagvalues "github.com/aws-resource-groups-tagging-api/mcp-server/tools/x_amz_target_resourcegroupstaggingapi_20170126_gettagvalues"
+	tools_x_amz_target_resourcegroupstaggingapi_20170126_startreportcreation "github.com/aws-resource-groups-tagging-api/mcp-server/tools/x_amz_target_resourcegroupstaggingapi_20170126_startreportcreation"
+	tools_x_amz_target_resourcegroupstaggingapi_20170126_tagresources "github.com/aws-resource-groups-tagging-api/mcp-server/tools/x_amz_target_resourcegroupstaggingapi_20170126_tagresources"
+	tools_x_amz_target_resourcegroupstaggingapi_20170126_untagresources "github.com/aws-resource-groups-tagging-api/mcp-server/tools/x_amz_target_resourcegroupstaggingapi_20170126_untagresources"
+)
+
+func GetAll(cfg *config.APIConfig) []models.Tool {
+	return []models.Tool{
+		tools_x_amz_target_resourcegroupstaggingapi_20170126_describereportcreation.CreateDescribereportcreationTool(cfg),
+		tools_x_amz_target_resourcegroupstaggingapi_20170126_getcompliancesummary.CreateGetcompliancesummaryTool(cfg),
+		tools_x_amz_target_resourcegroupstaggingapi_20170126_getresources.CreateGetresourcesTool(cfg),
+		tools_x_amz_target_resourcegroupstaggingapi_20170126_gettagkeys.CreateGettagkeysTool(cfg),
+		tools_x_amz_target_resourcegroupstaggingapi_20170126_gettagvalues.CreateGettagvaluesTool(cfg),
+		tools_x_amz_target_resourcegroupstaggingapi_20170126_startreportcreation.CreateStartreportcreationTool(cfg),
+		tools_x_amz_target_resourcegroupstaggingapi_20170126_tagresources.CreateTagresourcesTool(cfg),
+		tools_x_amz_target_resourcegroupstaggingapi_20170126_untagresources.CreateUntagresourcesTool(cfg),
+	}
+}
